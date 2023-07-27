@@ -7,7 +7,7 @@ namespace githubActionsGtestExample {
   }
 
   int add(int _first, int _second) {
-    return _first + _second + 20;
+    return _first + _second;
   }
 
 } // namespace githubActionsGtestExample

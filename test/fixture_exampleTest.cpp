@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 
+class C{};
 class B {
     C *ptr;
     public:
@@ -7,9 +8,6 @@ class B {
 
     }
 };
-
-class C{};
-
 class A {
     B *ptr;
     public:

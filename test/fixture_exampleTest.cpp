@@ -33,7 +33,7 @@ class TestFixtureTestSuite : public testing::Test
         // initialization
     }
 
-    ~TestFixtureTestSuite
+    ~TestFixtureTestSuite()
     {
         // releasing the resources
     }

@@ -64,7 +64,7 @@ TEST_F(TestFixtureTestSuite, OperationTrueTest)
     ASSERT_TRUE(aPtr->operation());
 }
 
-TEST_F(TestFixtureTestSuite, OperationTrueTest)
+TEST_F(TestFixtureTestSuite, OperationFalseTest)
 {
     // Arrange
     // Given by the fixture class TestFixtureTestSuite

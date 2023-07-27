@@ -54,7 +54,7 @@ class TestFixtureTestSuite : public testing::Test
         delete bPtr;
         delete aPtr;
     }
-}
+};
 
 TEST_F(TestFixtureTestSuite, OperationTrueTest)
 {

@@ -78,10 +78,16 @@ TYPED_TEST(TempSensorFixture, GetTempTest)
 
 // Interaction testing for the void function
 
+class FakeTempSensor: public ITempSensor
+{
+    public:
+    int getOutsideTemp() { return 0; }
+};
+
 TEST(AutoTempRegulatorTestSuite, RegulateTempTest)
 {
-    AutoTempRegulator codeUnderTest(nullptr);
-
+    FakeTempSensor stub;
+    AutoTempRegulator codeUnderTest(stub);
     codeUnderTest.regulateTemp();
 }
 

@@ -78,6 +78,7 @@ TYPED_TEST(TempSensorFixture, GetTempTest)
 
 // Interaction testing for the void function
 
+// method 1: Stub
 class FakeTempSensor: public ITempSensor
 {
     public:
@@ -91,3 +92,19 @@ TEST(AutoTempRegulatorTestSuite, RegulateTempTest)
     codeUnderTest.regulateTemp();
 }
 
+
+// method 2: hand-made mock
+class FakeTempSensor: public ITempSensor
+{
+    public:
+    int getOutsideTempCallCount = 0;
+    int getOutsideTemp() { getOutsideTempCallCount += 1; return 0; }
+};
+
+TEST(AutoTempRegulatorTestSuite, RegulateTempInteractionTest)
+{
+    FakeTempSensor mockObj;
+    AutoTempRegulator codeUnderTest(&mockObj);
+    codeUnderTest.regulateTemp();
+    ASSERT_EQ(mockObj.getOutsideTempCallCount, 1);
+}

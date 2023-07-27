@@ -1,0 +1,45 @@
+#include "gtest/gtest.h"
+
+class B {
+    C *ptr;
+    public:
+    B(C* addressOfObject): ptr{addressOfObject} {
+
+    }
+};
+
+class C{};
+
+class A {
+    B *ptr;
+    public:
+    A(B* addressOfObject): ptr{addressOfObject} {
+
+    }
+    bool operation() {
+        return true;
+    }
+};
+
+TEST("TestFixtureTestSuite", "OperationTrueTest")
+{
+    // Arrange
+    C cObj;
+    B bObj(&cObj);
+    A aObj(&bObj);
+
+    // Act and Asset
+    ASSERT_TRUE(aObj.operation());
+}
+
+TEST("TestFixtureTestSuite", "OperationFalseTest")
+{
+    // Arrange
+    C cObj;
+    B bObj(&cObj);
+    A aObj(&bObj);
+
+    // Act and Asset
+    ASSERT_FALSE(aObj.operation());
+}
+

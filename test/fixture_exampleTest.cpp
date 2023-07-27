@@ -21,7 +21,7 @@ class A {
     }
 };
 
-TEST("TestFixtureTestSuite", "OperationTrueTest")
+TEST(TestFixtureTestSuite, OperationTrueTest)
 {
     // Arrange
     C cObj;
@@ -32,7 +32,7 @@ TEST("TestFixtureTestSuite", "OperationTrueTest")
     ASSERT_TRUE(aObj.operation());
 }
 
-TEST("TestFixtureTestSuite", "OperationFalseTest")
+TEST(TestFixtureTestSuite, OperationFalseTest)
 {
     // Arrange
     C cObj;

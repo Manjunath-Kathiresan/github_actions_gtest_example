@@ -75,3 +75,13 @@ TYPED_TEST(TempSensorFixture, GetTempTest)
 {
 	ASSERT_EQ(this->objUnderTest->getOutsideTemp(), 23);
 }
+
+// Interaction testing for the void function
+
+TEST(AutoTempRegulatorTestSuite, RegulateTempTest)
+{
+    AutoTempRegulator codeUnderTest(nullptr);
+
+    codeUnderTest.regulateTemp();
+}
+
